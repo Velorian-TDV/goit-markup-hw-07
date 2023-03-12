@@ -30,7 +30,7 @@
         </a>
 
         <!-- Burger -->
-        <button class="burgerButton js-open-menu" type="button">
+        <button class="burgerButton" type="button" data-menu-open>
           <svg width="32" height="32">
             <use href="./images/icons.svg#icon-burger"></use>
           </svg>
@@ -38,11 +38,11 @@
 
       </div>
 
-      <div class="header-navigatorAndAddress js-menu-container">
+      <div class="header-navigatorAndAddress navigator-hiden" data-menu>
 
         <div class="header-navigatorAndAddress-container ">
 
-          <button class="closeBurger" type="button">
+          <button class="closeBurger" type="button" data-menu-close>
             <svg class="closeBurger-svg" width="8" height="8">
               <use href="./images/icons.svg#icon-close-black-18dp"></use>
             </svg>
@@ -435,79 +435,139 @@
 
   </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container tablet-container">
-        <div class="footer-content">
-          <div class="footer-content-item one">
-            <a href="./index.html" class="footer logo linkDecoration"
-              ><span>Web</span>Studio
-            </a>
-            <p class="footer-paragraph">
-              Increase the flow of customers and sales for your business with
-              digital marketing & growth solutions.
-            </p>
-          </div>
-          <div class="footer-content-item two">
-            <p class="footer-content-item-social">Social media</p>
-            <ul class="footer-content-item-socialList listDecoration">
-              <li class="footer-content-item-socialList-item">
-                <a href="" class="footer-content-item-socialList-item-link">
-                  <svg width="24" height="24">
-                    <use href="images/icons.svg#icon-instagram"></use>
-                  </svg>
-                </a>
-              </li>
-              <li class="footer-content-item-socialList-item">
-                <a href="" class="footer-content-item-socialList-item-link">
-                  <svg width="24" height="24">
-                    <use href="images/icons.svg#icon-twitter"></use>
-                  </svg>
-                </a>
-              </li>
-              <li class="footer-content-item-socialList-item">
-                <a href="" class="footer-content-item-socialList-item-link">
-                  <svg width="24" height="24">
-                    <use href="images/icons.svg#icon-facebook"></use>
-                  </svg>
-                </a>
-              </li>
-              <li class="footer-content-item-socialList-item">
-                <a href="" class="footer-content-item-socialList-item-link">
-                  <svg width="24" height="24">
-                    <use href="images/icons.svg#icon-linkedin"></use>
-                  </svg>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="footer-content-item three">
-            <p class="footer-content-item-social">Subscribe</p>
-            <form class="footer-content-item-form">
-              <input
-                class="footer-content-item-form-email"
-                type="email"
-                name="email"
-                placeholder="E-mail"
-                aria-label="email"
-              />
-              <button class="footer-content-item-form-submit" type="submit">
-                Subscribe
-                <svg
-                  class="footer-content-item-form-submit-svg"
-                  width="24"
-                  height="20"
-                >
-                  <use href="./images/icons.svg#paper-plane"></use>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container tablet-container">
+      <div class="footer-content">
+        <!-- Footer first block -->
+        <div class="footer-content-item one">
+          <a href="./index.html" class="footer logo linkDecoration"><span>Web</span>Studio
+          </a>
+          <p class="footer-paragraph">
+            Increase the flow of customers and sales for your business with
+            digital marketing & growth solutions.
+          </p>
+        </div>
+        <!-- Footer second block -->
+        <div class="footer-content-item two">
+          <p class="footer-content-item-social">Social media</p>
+          <ul class="footer-content-item-socialList listDecoration">
+            <li class="footer-content-item-socialList-item">
+              <a href="" class="footer-content-item-socialList-item-link">
+                <svg width="24" height="24">
+                  <use href="images/icons.svg#icon-instagram"></use>
                 </svg>
-              </button>
-            </form>
-          </div>
+              </a>
+            </li>
+            <li class="footer-content-item-socialList-item">
+              <a href="" class="footer-content-item-socialList-item-link">
+                <svg width="24" height="24">
+                  <use href="images/icons.svg#icon-twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="footer-content-item-socialList-item">
+              <a href="" class="footer-content-item-socialList-item-link">
+                <svg width="24" height="24">
+                  <use href="images/icons.svg#icon-facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="footer-content-item-socialList-item">
+              <a href="" class="footer-content-item-socialList-item-link">
+                <svg width="24" height="24">
+                  <use href="images/icons.svg#icon-linkedin"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- Footer third block -->
+        <div class="footer-content-item three">
+          <p class="footer-content-item-social">Subscribe</p>
+          <form class="footer-content-item-form">
+            <input class="footer-content-item-form-email" type="email" name="email" placeholder="E-mail"
+              aria-label="email" />
+            <button class="footer-content-item-form-submit" type="submit">
+              Subscribe
+              <svg class="footer-content-item-form-submit-svg" width="24" height="20">
+                <use href="./images/icons.svg#paper-plane"></use>
+              </svg>
+            </button>
+          </form>
         </div>
       </div>
-    </footer>
+    </div>
+  </footer>
+
+  <!-- Backdrop & Modal -->
+  <div class="backdrop backdrop-hiden" data-modal>
+    <div class="backdrop-modal">
+      <button type="button" class="backdrop-modal-close" data-modal-close>
+        <svg class="backdrop-modal-close-icon" width="8" height="8">
+          <use href="./images/icons.svg#icon-close-black-18dp"></use>
+        </svg>
+      </button>
+
+      <b class="backdrop-modal-header">Leave your contacts and we will call you back</b>
+      <form>
+        <div class="backdrop-modal-block">
+          <label class="backdrop-modal-block-label" for="backdrop-modal-block-persone">Name</label>
+          <div class="backdrop-modal-block-wrap">
+            <input class="backdrop-modal-block-input" id="backdrop-modal-block-persone" type="text"
+              name="persone-name" />
+            <svg class="backdrop-modal-block-svg" width="18" height="24">
+              <use href="./images/icons.svg#icon-person-black"></use>
+            </svg>
+          </div>
+        </div>
+
+        <div class="backdrop-modal-block">
+          <label class="backdrop-modal-block-label" for="backdrop-modal-block-phone">Phone</label>
+          <div class="backdrop-modal-block-wrap">
+            <input class="backdrop-modal-block-input" id="backdrop-modal-block-phone" type="text" name="phone-number" />
+            <svg class="backdrop-modal-block-svg" width="18" height="24">
+              <use href="./images/icons.svg#icon-phone-black"></use>
+            </svg>
+          </div>
+        </div>
+
+        <div class="backdrop-modal-block">
+          <label class="backdrop-modal-block-label" for="backdrop-modal-block-email">Email</label>
+          <div class="backdrop-modal-block-wrap">
+            <input class="backdrop-modal-block-input" id="backdrop-modal-block-email" type="text" name="email" />
+            <svg class="backdrop-modal-block-svg" width="18" height="24">
+              <use href="./images/icons.svg#icon-email-black"></use>
+            </svg>
+          </div>
+        </div>
+
+        <div class="backdrop-modal-block-coment">
+          <label class="backdrop-modal-block-label" for="comment">Comment</label>
+          <textarea class="backdrop-modal-block-coment-textarea" name="comment" id="comment"
+            placeholder="Text input"></textarea>
+        </div>
+
+        <label class="backdrop-modal-block-policy-label">
+          <input type="checkbox" class="backdrop-modal-block-checkbox visually-hidden" />
+          <span class="backdrop-modal-block-checkbox-decor"></span>
+          <span class="backdrop-modal-block-policy">
+            I accept the terms and conditions of the
+            <a href="#" class="plicy-link">Privacy Policy</a>
+          </span>
+        </label>
+
+        <div class="backdrop-modal-block-sendBlock">
+          <button type="submit" class="backdrop-modal-block-send-button">
+            Send
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
 
   <script src="./scripts/modal.js"></script>
+  <script src="./scripts/menu.js"></script>
 </body>
 
 </html>
