@@ -399,7 +399,7 @@ svg {
 
 .navigator {
   /* Box model */
-  flex-grow: 1;
+  margin-bottom: auto;
 }
 
 .navigator-list-item {
@@ -425,12 +425,12 @@ svg {
   color: var(--pressed-state);
 }
 
-@media screen and (min-width: 768px) {
-  .navigator {
-    /* Box model */
-    flex-grow: 0;
-  }
+.current-page {
+  /* Visual */
+  color: var(--pressed-state);
+}
 
+@media screen and (min-width: 768px) {
   .navigator-list-item {
     /* Positioning */
     margin-bottom: 0px;
@@ -597,11 +597,8 @@ svg {
     /* Box model */
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
+    justify-content: center;
     align-items: center;
-
-    /* Positioning */
-    margin-top: 24px;
   }
 
   .address-list-item:not(:first-child) {
@@ -612,6 +609,7 @@ svg {
   .address-list-item.phone {
     /* Box model */
     order: 2;
+    margin-top: 12px;
   }
 
   .address-list-item.email {
@@ -645,6 +643,7 @@ svg {
   .address-list {
     /* Box model */
     flex-direction: row;
+
     /* Positioning */
     margin-top: 0px;
   }
@@ -652,6 +651,11 @@ svg {
   .address-list-item:not(:last-child) {
     /* Positioning */
     margin-right: 40px;
+  }
+
+  .address-list-item.phone {
+    /* Positioning */
+    margin-top: 0px;
   }
 
   .address-list-item-link.phone,
@@ -1352,19 +1356,30 @@ svg {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  padding-top: 188px;
-  padding-bottom: 188px;
+  padding-top: 112px;
+  padding-bottom: 112px;
 }
 
 .firstBlock-background {
   /* Visual */
   background-image: linear-gradient(rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)),
-    url(../images/people-office-mobile.jpg);
+    url(../images/people-office.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-color: var(--hero-background);
+}
+
+@media (min-device-pixel-ratio: 2),
+(min-resolution: 192dpi),
+(min-resolution: 2dppx) {
+  .firstBlock-background {
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)),
+      url(../images/people-office-retina.jpg);
+
+  }
 }
 
 .firstBlock-header {
@@ -1400,7 +1415,7 @@ svg {
 
   /* Positioning */
   padding: 16px 32px 16px 32px;
-  margin: 48px auto 0px auto;
+  margin: 72px auto 0px auto;
 
   /* Visual */
   background-color: var(--primary-brand);
@@ -1422,15 +1437,6 @@ svg {
     /* Positioning */
     margin-left: auto;
     margin-right: auto;
-    padding-top: 188px;
-    padding-bottom: 188px;
-  }
-
-  .firstBlock-background {
-    /* Visual */
-    background-image: linear-gradient(rgba(46, 47, 66, 0.7),
-        rgba(46, 47, 66, 0.7)),
-      url(../images/people-office-tablet.jpg);
   }
 
   .firstBlock-header {
@@ -1451,19 +1457,24 @@ svg {
     /* Visual */
     color: var(--hero-text);
   }
+
+  .firstBlock-button {
+    /* Positioning */
+    margin-top: 36px;
+  }
 }
 
 @media screen and (min-width: 1200px) {
   .firstBlock {
     /* Positioning */
     max-width: 1440px;
+    padding-top: 188px;
+    padding-bottom: 188px;
   }
 
-  .firstBlock-background {
-    /* Visual */
-    background-image: linear-gradient(rgba(46, 47, 66, 0.7),
-        rgba(46, 47, 66, 0.7)),
-      url(../images/people-office.jpg);
+  .firstBlock-button {
+    /* Positioning */
+    margin-top: 48px;
   }
 }
 
@@ -1538,7 +1549,7 @@ svg {
 
   .secondBlock-list-item {
     /* Box model */
-    flex-basis: calc((100% - 2 * 24px) / 2);
+    flex-basis: calc((100% - 1 * 24px) / 2);
   }
 
   .secondBlock-list-item-header {
